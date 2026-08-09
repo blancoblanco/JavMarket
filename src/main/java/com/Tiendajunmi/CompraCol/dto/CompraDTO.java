@@ -1,10 +1,8 @@
 package com.Tiendajunmi.CompraCol.dto;
 
 import com.Tiendajunmi.CompraCol.model.Estado;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
 
 import java.time.LocalDate;
 import java.util.List;
@@ -13,6 +11,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class CompraDTO {
 
     private Long id;

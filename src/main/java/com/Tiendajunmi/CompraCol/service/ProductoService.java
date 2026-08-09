@@ -20,7 +20,7 @@ public class ProductoService implements IProductoService{
 
     @Override
     public ProductoDTO crearCompra(ProductoDTO productoDTO) {
-        return null;
+        return productoRepository.save();
     }
 
     @Override
