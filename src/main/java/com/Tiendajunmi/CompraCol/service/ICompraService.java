@@ -9,6 +9,6 @@ import java.util.Map;
 public interface ICompraService {
     List<CompraDTO>  traerCompras();
     CompraDTO crearCompra(CompraDTO compraDTO);
-    CompraDTO actualizarCompra(Long id,CompraDTO CompraDTO);
+    CompraDTO actualizarCompra(Long id,CompraDTO compraDTO);
     ResponseEntity<Map<String,Boolean>> eliminarCompra(Long id);
 }

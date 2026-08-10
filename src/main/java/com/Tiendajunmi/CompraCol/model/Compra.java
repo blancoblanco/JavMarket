@@ -20,9 +20,16 @@ public class Compra {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private LocalDate fecha;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "estado")
+
     private Estado estado;
     private Double total;
 
     @OneToMany(mappedBy = "compra")
     private List<DetalleCompra> detalle =new ArrayList<>();
+
+    @ManyToOne
+    private Usuario usuario;
 }

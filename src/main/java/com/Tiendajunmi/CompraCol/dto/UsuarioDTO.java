@@ -1,6 +1,6 @@
 package com.Tiendajunmi.CompraCol.dto;
 
-import com.Tiendajunmi.CompraCol.model.Compra;
+
 import lombok.*;
 
 import java.util.List;
@@ -18,7 +18,7 @@ public class UsuarioDTO {
     private String password;
     private String telefono;
     private String direccion;
-    private List<Compra> compras;
+    private List<CompraDTO> compras;
 
 }
 

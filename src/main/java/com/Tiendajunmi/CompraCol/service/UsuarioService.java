@@ -1,6 +1,6 @@
 package com.Tiendajunmi.CompraCol.service;
 
-import com.Tiendajunmi.CompraCol.Mapper.Mapper;
+import com.Tiendajunmi.CompraCol.mapper.Mapper;
 import com.Tiendajunmi.CompraCol.dto.UsuarioDTO;
 import com.Tiendajunmi.CompraCol.exception.NotFoundException;
 

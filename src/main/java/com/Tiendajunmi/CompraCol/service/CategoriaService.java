@@ -1,17 +1,19 @@
 package com.Tiendajunmi.CompraCol.service;
 
-import com.Tiendajunmi.CompraCol.Mapper.Mapper;
+import com.Tiendajunmi.CompraCol.mapper.Mapper;
 import com.Tiendajunmi.CompraCol.dto.CategoriaDTO;
 import com.Tiendajunmi.CompraCol.exception.NotFoundException;
 import com.Tiendajunmi.CompraCol.model.Categoria;
 import com.Tiendajunmi.CompraCol.repository.CategoriaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Service
 public class CategoriaService  implements  ICategoriaService{
 
     @Autowired

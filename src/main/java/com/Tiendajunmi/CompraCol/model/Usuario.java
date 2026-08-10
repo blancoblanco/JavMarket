@@ -24,7 +24,8 @@ public class Usuario {
     @Enumerated(EnumType.STRING)
     @Column(name = "rol")
     private Rol rol;
-    
+
+    @OneToMany(mappedBy = "usuario")
     private List<Compra> compras;
 
 

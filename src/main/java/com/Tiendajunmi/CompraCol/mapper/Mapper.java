@@ -1,4 +1,4 @@
-package com.Tiendajunmi.CompraCol.Mapper;
+package com.Tiendajunmi.CompraCol.mapper;
 
 import com.Tiendajunmi.CompraCol.dto.*;
 import com.Tiendajunmi.CompraCol.model.Categoria;
@@ -79,6 +79,10 @@ public class Mapper {
                 .password(u.getPassword())
                 .telefono(u.getTelefono())
                 .direccion(u.getDireccion())
+                .compras(u.getCompras()
+                        .stream()
+                        .map(Mapper::toDTO)
+                        .toList())
                 .build();
     }
 }
