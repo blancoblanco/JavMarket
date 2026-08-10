@@ -17,6 +17,15 @@ public class Mapper {
                 .nombre(ca.getNombre())
                 .build();
     }
+    // CategoriaDTO → Categoria
+    public static Categoria toEntity(CategoriaDTO ca) {
+        if (ca == null) return null;
+
+        return Categoria.builder()
+                .id(ca.getId())
+                .nombre(ca.getNombre())
+                .build();
+    }
 
     //Mapeo de Producto a productoDto
     public static ProductoDTO toDTO(Producto p) {
@@ -38,7 +47,8 @@ public class Mapper {
         var detalle = c.getDetalle().stream().map(
                 det ->
                         DetalleCompraDTO.builder()
-                                .id(det.getProducto().getId())
+                                .id(det.getId())
+                                .idProd(det.getProducto().getId())
                                 .nombreProd(det.getProducto().getNombre())
                                 .cantProd(det.getCantProd())
                                 .precio(det.getPrecio())
