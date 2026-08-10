@@ -1,8 +1,6 @@
 package com.Tiendajunmi.CompraCol.model;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.List;
@@ -12,6 +10,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Entity
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +20,11 @@ public class Usuario {
     private String password;
     private String telefono;
     private String direccion;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "rol")
+    private Rol rol;
+    
     private List<Compra> compras;
 
 

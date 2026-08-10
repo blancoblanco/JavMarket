@@ -10,7 +10,7 @@ import java.util.Map;
 
 public interface IProductoService {
     List<ProductoDTO> traerProductos();
-    ProductoDTO crearCompra(ProductoDTO productoDTO);
+    ProductoDTO crearProducto(ProductoDTO productoDTO);
     ProductoDTO actualizarProducto(Long id,ProductoDTO productoDTO);
     ResponseEntity<Map<String,Boolean>> eliminarProducto(Long id);
 }

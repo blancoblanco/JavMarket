@@ -24,7 +24,7 @@ public class ProductoService implements IProductoService{
     }
 
     @Override
-    public ProductoDTO crearCompra(ProductoDTO productoDTO) {
+    public ProductoDTO crearProducto(ProductoDTO productoDTO) {
         Producto producto= Producto.builder()
                 .nombre(productoDTO.getNombre())
                 .categorias(productoDTO.getCategorias()
