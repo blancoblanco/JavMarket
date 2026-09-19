@@ -25,7 +25,7 @@ public class ProductoController {
     @PostMapping
     public  ResponseEntity<ProductoDTO> crearProducto (@RequestBody ProductoDTO  productoDTO){
         ProductoDTO nuevoProducto =productoService.crearProducto(productoDTO);
-        return ResponseEntity.created(URI.create("producto creado")).body(nuevoProducto);
+        return ResponseEntity.created(URI.create("productoCreado")).body(nuevoProducto);
     }
     @PutMapping("/{id}")
     public ResponseEntity<ProductoDTO> actualizarProducto(@PathVariable Long id,@RequestBody ProductoDTO productoDTO){

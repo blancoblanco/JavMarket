@@ -18,6 +18,7 @@ public class DetalleCompra {
     private Long id;
     //compra
     @ManyToOne
+    @JoinColumn(name = "id_compra")
     private Compra compra;
     //producto
     @ManyToOne

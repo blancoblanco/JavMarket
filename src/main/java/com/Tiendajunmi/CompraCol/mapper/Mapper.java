@@ -6,7 +6,8 @@ import com.Tiendajunmi.CompraCol.model.Compra;
 import com.Tiendajunmi.CompraCol.model.Producto;
 import com.Tiendajunmi.CompraCol.model.Usuario;
 
-import java.util.stream.Collectors;
+import java.util.List;
+
 
 public class Mapper {
 
@@ -35,16 +36,19 @@ public class Mapper {
                 .nombre(p.getNombre())
                 .stock(p.getStock())
                 .precio(p.getPrecio())
-                .categorias(p.getCategorias()
-                        .stream().map(Mapper::toDTO)
-                        .collect(Collectors.toList()))
-
+                .categorias(p.getCategorias()!=null ?
+                        p.getCategorias()
+                                .stream()
+                                .map(Mapper::toDTO)
+                                .toList()
+                        :List.of()
+                )
                 .build();
         }
     //Mapeo de Compra a compraDto
     public static CompraDTO toDTO(Compra c) {
         if (c == null) return null;
-        var detalle = c.getDetalle().stream().map(
+        var detalle =  c.getDetalle()!=null ? c.getDetalle().stream().map(
                 det ->
                         DetalleCompraDTO.builder()
                                 .id(det.getId())
@@ -54,10 +58,11 @@ public class Mapper {
                                 .precio(det.getPrecio())
                                 .subtotal(det.getPrecio() * det.getCantProd())
                                 .build()
-        ).collect(Collectors.toList());
+        ).toList():List.<DetalleCompraDTO>of();
 
-        var total =detalle.stream().map(DetalleCompraDTO ::getSubtotal)
-                .reduce(0.0,Double::sum);
+        var total = detalle.stream().mapToDouble(DetalleCompraDTO::getSubtotal).sum();
+
+
 
         return  CompraDTO.builder()
                 .id(c.getId())

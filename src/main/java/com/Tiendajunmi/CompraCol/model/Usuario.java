@@ -3,6 +3,7 @@ package com.Tiendajunmi.CompraCol.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -25,8 +26,10 @@ public class Usuario {
     @Column(name = "rol")
     private Rol rol;
 
+
+    @Builder.Default
     @OneToMany(mappedBy = "usuario")
-    private List<Compra> compras;
+    private List<Compra> compras =new ArrayList<>();
 
 
 }

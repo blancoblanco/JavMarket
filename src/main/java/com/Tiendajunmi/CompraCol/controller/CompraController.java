@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -26,7 +25,7 @@ public class CompraController {
     @PostMapping
     public  ResponseEntity<CompraDTO> crearCompra (@RequestBody CompraDTO  compraDTO){
         CompraDTO nuevaCompra =compraService.crearCompra(compraDTO);
-        return ResponseEntity.created(URI.create("compra creada")).body(nuevaCompra);
+        return ResponseEntity.ok(nuevaCompra);
     }
 
     @PutMapping("/{id}")

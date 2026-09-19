@@ -27,7 +27,7 @@ public class Compra {
     private Estado estado;
     private Double total;
 
-    @OneToMany(mappedBy = "compra")
+    @OneToMany(mappedBy = "compra" , cascade = CascadeType.ALL, orphanRemoval = true)
     private List<DetalleCompra> detalle =new ArrayList<>();
 
     @ManyToOne

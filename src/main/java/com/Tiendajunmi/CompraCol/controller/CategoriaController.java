@@ -25,7 +25,7 @@ public class CategoriaController {
     @PostMapping
     public  ResponseEntity<CategoriaDTO> crearCategoria (@RequestBody CategoriaDTO  categoriaDTO){
         CategoriaDTO nuevaCategoria =categoriaService.crearCategoria(categoriaDTO);
-        return ResponseEntity.created(URI.create("categoria creada")).body(nuevaCategoria);
+        return ResponseEntity.ok(nuevaCategoria);
     }
     @PutMapping("/{id}")
     public ResponseEntity<CategoriaDTO> actualizarCategoria(@PathVariable Long id, @RequestBody CategoriaDTO categoriaDTO){
